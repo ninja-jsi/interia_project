@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interia: Best Interior Design Solutions for your Home | Get Free Quotes</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/common-style.css">
+    <link rel="stylesheet" href="css/book-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="source/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/supabase.min.js"></script>
+
+</head>
+
+<body>
+    <script src="js/book-code.js"></script>
+    <script src="js/code.js"></script>
+    <script src="netlify/functions/submitForm.js"></script>
+
+    <div class="banner">
+        <div class="navbar">
+            <img onclick="btn('index.html');" src="source/logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="get-quote.html">Get Quote</a></li>
+                <li><a href="our-designs.html">Design ideas</a></li>
+                <li><a href="how-it-works.html">How It Works?</a></li>
+                <li><a href="contact-us.html">Visit Us</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>TALK TO A DESIGNER</h1>
+        </div>
+    </div>
+
+    <!-- form section -->
+    <div class="m1">
+        <div class="d1">
+            <div class="final">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Get Your Free Quote</h2>
+                        <p>Fill out the form below and we'll get back to you shortly</p>
+                    </div>
+                        <!-- <form id="myForm" action="includes/save.php" method="POST" class="modern-form"> -->
+                            <form id="myForm" action="#" method="POST" class="modern-form" netlify>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" name="name" id="name" required>
+                                    <label for="name">Full Name</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" name="email" id="email" required>
+                                    <label for="email">Email Address</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" required>
+                                    <label for="mobile">Phone Number</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <select name="service" id="service" required>
+                                        <option value="">Select Service Type</option>
+                                        <option value="residential">Residential Design</option>
+                                        <option value="commercial">Commercial Design</option>
+                                        <option value="renovation">Renovation</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea name="message" id="message" rows="4" required></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <span>Get Free Quote</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <div id="form-message" class="form-message"></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Second Section  -->
+    <div class="m2">
+        <div class="t2">
+            <h1>Superior interiors</h1>
+            <p>With stunning designs and professional on-site services, we make dream homes come alive.</p>
+        </div>
+        <div class="d2">
+            <div onclick="btn('our-projects.html?topic=master-bedroom');">
+                <img src="source/book-m2-1.jpg">
+                <h3>Bedroom</h3>
+            </div>
+            <div onclick="btn('our-projects.html?topic=dining-room');">
+                <img src="source/book-m2-2.jpg">
+                <h3>Dining Room</h3>
+            </div>
+            <div onclick="btn('our-projects.html?topic=living-room');">
+                <img src="source/book-m2-3.jpg">
+                <h3>Living Room</h3>
+            </div>
+        </div>
+    </div>    
+
+    <!-- FAQ Section  -->
+    <div class="m4">
+        <div class="t4">
+            <h1>FAQs</h1>
+        </div>
+        <div class="d4">
+            <div class="faq-item" onclick="toggleFAQ('p1', this)">
+                <div class="faq-question">Is this the right time to do my home interiors? <span class="faq-icon">+</span></div>
+                <p id="p1" class="faq-answer"><span><br>Yes, it is. From meetings at our Experience Centres to
+                    installing your home interiors at the site. So don't worry about kick-starting your
+                    dream project.</span>
+                <span>Since the process of co-creating a design typically takes 4-6 weeks, you can get started
+                    with online consultation. Our designers can assist you online via video calls. You can also
+                    schedule an appointment and meet us at our Experience Centre.</span></p>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ('p2', this)">
+                <div class="faq-question">Can I meet my interior designer? <span class="faq-icon">+</span></div>
+                <p id="p2" class="faq-answer"><br>Yes, certainly. Keeping safety in mind, we have enabled 2 different
+                    ways of interactions:<br>1. Online consultation<br>2. Safe design meets at our
+                    Experience Centres.</p>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ('p3', this)">
+                <div class="faq-question">Can I have a meeting at my home? <span class="faq-icon">+</span></div>
+                <p id="p3" class="faq-answer"><br>We would recommend meetings at our Experience Centre visit. We are taking every step to make it a safe environment. However, you
+                    can always opt for online consultation and we will be happy to discuss your project in detail.</p>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ('p4', this)">
+                <div class="faq-question">How can I select materials for design? <span class="faq-icon">+</span></div>
+                <p id="p4" class="faq-answer"><br>While we can share images of the materials and finishes during the
+                    design phase online, you will have to visit our Experience Centre to finalise them.</p>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ('p5', this)">
+                <div class="faq-question">How will my site be measured? <span class="faq-icon">+</span></div>
+                <p id="p5" class="faq-answer"><br>You can share the floor plan of your home with our designers, that
+                    should help us to start your project. If in case you don’t have the floor plan, we will assign our
+                    representative for a site visit.</p>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ('p6', this)">
+                <div class="faq-question">What will be the timelines for my project completion? <span class="faq-icon">+</span></div>
+                <p id="p6" class="faq-answer"><br>We will keep you updated on the timelines based on the discussion
+                    with the designers. We are doing everything we can to cover up on
+                    the lost time and to deliver your home interiors in the safest way possible.</p>
+            </div>
+        </div>
+    </div>
+                            
+    <!-- Last Section  -->
+    <div class="m-last">
+        <div class="last">
+            <div>
+                <h1>Your dream home is just a click away</h1>
+                <button onclick="btn('#');">GET STARTED</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section  -->
+    <footer>
+        <div class="ftr-m">
+            <div class="ftr-t">
+                <img src="source/logo.png">
+            </div>
+            <div class="ftr-d">
+                <div>
+                    <h3>Design ideas</h3>
+                    <ul>
+                        <li><a href="our-projects.html?topic=living-room">Living Rooms</a></li>
+                        <li><a href="our-projects.html?topic=kitchen">Kitchens</a></li>
+                        <li><a href="our-projects.html?topic=master-bedroom">Master Bedrooms</a></li>
+                        <li><a href="our-projects.html?topic=kids-bedroom">Kids Bedrooms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Locations</h3>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/place/Mumbai" target="_blank">Mumbai</a></li>
+                        <li><a href="https://www.google.com/maps/place/New+Delhi" target="_blank">New Delhi</a></li>
+                        <li><a href="https://www.google.com/maps/place/Kolkata" target="_blank">Kolkata</a></li>
+                        <li><a href="https://www.google.com/maps/place/Bengaluru" target="_blank">Bengaluru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="get-quote.html">Book A Design</a></li>
+                        <li><a href="contact-us.html">Visit Us</a></li>
+                        <li><a href="how-it-works.html">How It Works?</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Get in touch</h3>
+                    <ul>
+                        <li>Call us</li>
+                        <a href="tel:8849221060">+91 8849221060</a>
+                        <li>Email us</li>
+                        <a href="mailto:kheniutsav007@gmail.com">kheniutsav007@gmail.com</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="ftr-b">
+                <p>© 2025 Interia.com | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
