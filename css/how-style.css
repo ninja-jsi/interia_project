@@ -1,0 +1,155 @@
+.banner{
+    height: 75vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../source/how-background.jpg);
+
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+/* All Section Container Designing  */
+.m1, .m3, .m5, .m6 {
+    padding: 50px;
+    text-align: center;
+}
+.t1 h1, .t6 h1{
+    font-size: 3rem;
+    color: #222;
+}
+.t1 p, .t6 p{
+    font-size: 1.2rem;
+    color: #666;
+}
+.d1, .d3, .d5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.image-container {
+    flex: 1;
+    max-width: 550px;
+}
+.image-container img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+.text-container {
+    flex: 1;
+    max-width: 550px;
+    text-align: left;
+}
+.text-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.text-container ul {
+    list-style: none;
+    padding: 0;
+}
+.text-container li {
+    margin-bottom: 20px;
+}
+.text-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+.text-container p {
+    font-size: 1.1rem;
+    color: #555;
+}
+.btn-c {
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 12px 24px;
+    background: #eb595f;
+    color: white;
+    border: solid 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-c:hover {
+    background: white;
+    border: solid 2px;
+    color: #eb595f;
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .d1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-container {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* Second and fourth container designing  */
+.m2, .m4 {
+    background-color: #4a3f54;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+}
+.m2 h1, .m4 h1{
+    color: #ffffff;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.m2 i, .m4 i {
+    font-size: 40px;
+    color: #76c893;
+}
+
+
+/* team members comtainer designing */
+.d6 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 1100px;
+}
+.team-member {
+    text-align: center;
+    width: 300px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.team-member img {
+    width: 50%;
+    border-radius: 10px;
+}
+.team-member h4 {
+    color: #eb595f;
+}
+.team-member p {
+    padding-top: 10px;
+}
+.d6 div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.d6 div:hover img {
+    transform: scale(1.05);
+}

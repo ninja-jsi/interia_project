@@ -1,0 +1,428 @@
+.content{
+    top: 30%;
+}
+.banner{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../source/book-background.jpg);
+
+}
+
+
+/* hero section */
+.m1{
+    width: 100%;
+    height: 475px;
+    text-align: center;
+    padding-bottom: 150px;
+}
+.d1{
+    width: 850px;
+    margin: auto;
+    position:relative;
+}
+.final{
+    position: absolute;
+    width:fit-content;
+    height: 800px;
+    top: -350px;
+}
+
+
+/* form section */
+.form-container {
+    background: #ffffff;
+    padding: 30px 100px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h2 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.input-group textarea + i {
+    top: 25px;
+    transform: none;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.input-group textarea {
+    padding-top: 20px;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.input-group label {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.input-group textarea + label {
+    top: 25px;
+    transform: none;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #eb595f;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(235, 89, 95, 0.1);
+}
+
+.input-group input:focus + label,
+.input-group select:focus + label,
+.input-group textarea:focus + label,
+.input-group input:valid + label,
+.input-group select:valid + label,
+.input-group textarea:valid + label {
+    top: -10px;
+    left: 20px;
+    font-size: 0.9em;
+    padding: 0 5px;
+    background: #fff;
+    color: #eb595f;
+    font-weight: 500;
+}
+
+.input-group input:focus ~ i,
+.input-group select:focus ~ i,
+.input-group textarea:focus ~ i {
+    color: #eb595f;
+}
+
+.submit-btn {
+    background: #eb595f;
+    color: white;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #d44a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(235, 89, 95, 0.3);
+}
+
+.submit-btn i {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/* forms section end */
+
+/* Interior Exmaples  */
+.m2 {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 50px 350px 50px 350px;
+}
+.t2 {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+.t2 h1 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+.t2 p {
+    font-size: 22px;
+    color: #666;
+    line-height: 1.5;
+}
+.d2 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+.d2 div {
+    position: relative;
+    width: 275px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.d2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.d2 div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.d2 div:hover img {
+    transform: scale(1.1);
+    filter: brightness(50%);
+}
+.d2 h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/*Frequently Asked Questions Section*/
+.m4 {
+    max-width: 100%;
+    margin: auto;
+    padding: 50px 350px 50px 350px;
+    text-align: center;
+}
+.t4 h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+}
+.d4 {
+    width: 100%;
+}
+.faq-item {
+    background: #f8f9fa;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.faq-question {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    display: none;
+    padding-top: 10px;
+    text-align: left;
+}
+
+/* last section */
+.d5{
+    position: relative;
+    background-image: url('source/bk.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+.d5 div{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.d5 div h1{
+    font-size: 35px;
+}
+.d5 div button{
+    font-size: 25px;
+    color: black;
+    padding: 15px 10px;
+    margin: 20px 10px;
+    border-radius: 25px;
+    border: 2px solid #eb595f;
+    font-size: 25px;
+    font-weight: bold;
+    transition: .5s;
+}
+.d5 div button:hover{
+    background-color: #eb595f;
+    color: white;
+}
+
+/* footer */
+.ftr-m{
+    color: #f3f3f3;
+    padding: 30px 30px 0 30px;
+    background: #41303e;
+    align-items: center;
+    justify-content: space-between;
+}
+.ftr-t{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #644b5e;
+    margin: 0 0 20px 0;
+}
+.ftr-t img{
+    width: 250px;
+    align-content: left;
+}
+.ftr-t ul{
+    list-style-type: none;
+}
+.ftr-t ul li{
+    float: left;
+}
+.ftr-t ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.ftr-t ul li a i{
+    font-size: 45px;
+    margin: 7px 25px 0 0;
+}
+.ftr-t ul li a i:hover{
+    color: #eb595f;
+}
+.ftr-d{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #644b5e;
+}
+.ftr-d div{
+    width: 250px;
+}
+.ftr-d div h3{
+    margin: 0 0 10px 0;
+}
+.ftr-d div ul{
+    margin: 0 0 0 25px;
+    line-height: 30px;
+}
+.ftr-d div a{
+    text-decoration: none;
+    color: white;
+}
+.ftr-d div a:hover{
+    color: #eb595f;
+}
+.ftr-b{
+    padding: 15px 0 12px 0;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,91 @@
+.banner{
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(source/show-background-living-room.jpg); */
+}
+.content{
+    top: 45%;
+}
+
+/* General Styling for container*/
+.m1 {
+    padding: 150px 250px;
+    background-color: #f9f9f9;
+}
+.t1 {
+    width: 100%;
+    text-align: center;
+}
+.t1 p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Grid container which contains 3 columns per row*/
+.d1 {
+    margin-top: 50px;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Container Designing */
+.d1 div {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: 0.4s;
+}
+.d1 div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.d1 div img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.d1 div img:hover {
+    transform: scale(1.07);
+}
+.d1 div h2 {
+    margin: 15px 0 10px 0;
+    font-size: 22px;
+    color: #222;
+    font-weight: 600;
+}
+.d1 div span {
+    font-size: 20px;
+    color: #eb595f;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* button desiging */
+.d1 div button {
+    cursor: pointer;
+    font-size: 16px;
+    background: #eb595f;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.d1 div button:hover {
+    background: white;
+    border: solid 2px;
+    color: #eb595f;
+    transform: scale(1.05);
+}
