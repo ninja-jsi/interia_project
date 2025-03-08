@@ -450,7 +450,7 @@ body{
 /* Dark Mode Styles */
 @media (prefers-color-scheme: dark) {
     .last div h1 {
-        color: white;
+        color: rgb(0, 0, 0);
     }
 
     .last div button {
