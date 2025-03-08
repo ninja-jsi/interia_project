@@ -421,6 +421,7 @@ body{
 }
 .last div h1{
     font-size: 35px;
+    color: black;
 }
 .last div button{
     font-size: 25px;
