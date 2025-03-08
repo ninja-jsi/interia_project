@@ -408,6 +408,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overlay: rgba(0, 0, 0, 0.233);
     margin-top: 30px;
     width: 100%;
     height: 400px;
@@ -448,7 +449,7 @@ body{
 }
 
 /* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .last div h1 {
         color: rgb(0, 0, 0);
     }
@@ -463,7 +464,7 @@ body{
         background-color: #eb595f;
         color: white;
     }
-}
+} */
 
 
 /* Footer */
