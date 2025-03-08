@@ -12,8 +12,36 @@
     <link rel="shortcut icon" href="source/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- video script  -->
     <script src="js/code.js"></script>
+
+    <!-- Navbar Section -->
+    <div class="navbar-container">
+        <div class="navbar">
+            <img onclick="btn('index.html');" src="source/logo.png" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="get-quote.html">Get Quote</a></li>
+                <li><a href="our-designs.html">Design ideas</a></li>
+                <li><a href="how-it-works.html">How It Works?</a></li>
+                <li><a href="contact-us.html" class="active">Visit Us</a></li>
+            </ul>    
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="content">
+            <h1>READY TO TAKE A TOUR OF OUR <br>EXPERIENCE CENTRE?</h1>
+        </div>
+    </div>
+
+    <!-- video script  -->
     <script src="js/visit-code.js"></script>
     <script>
         function openvid() {
@@ -24,24 +52,6 @@
         }
     </script>
     
-    <!-- hero section  -->
-    <div class="banner">
-        <div class="navbar">
-            <img onclick="btn('index.html');" src="source/logo.png" class="logo">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="get-quote.html">Get Quote</a></li>
-                <li><a href="our-designs.html">Design ideas</a></li>
-                <li><a href="how-it-works.html">How It Works?</a></li>
-                <li><a href="contact-us.html">Visit Us</a></li>
-            </ul>
-        </div>
-
-        <div class="content">
-            <h1>READY TO TAKE A TOUR OF OUR <br>EXPERIENCE CENTRE?</h1>
-        </div>
-    </div>
-
     <!-- first section  -->
     <div class="m1">
         <div class="t1">
@@ -102,69 +112,30 @@
         </div>
     </div>
 
-    <!-- third section  -->
-    <div class="m3">
-        <div class="d3">
-            <div class="a">
-                <!-- slider section  -->
-                <div class="slider">
-                    <div class="slide">
-                    <input type="radio" name="radio_btn" id="radio1" checked>
-                    <input type="radio" name="radio_btn" id="radio2">
-                    <input type="radio" name="radio_btn" id="radio3">
-                    <input type="radio" name="radio_btn" id="radio4">
-                    <input type="radio" name="radio_btn" id="radio5">
-                    <input type="radio" name="radio_btn" id="radio6">
-                    <!-- slider images   -->
-                    <div class="imgs f">
-                        <img src="source/visit-slide1.jpg">
-                    </div>
-                    <div class="imgs">
-                        <img src="source/visit-slide2.jpg">
-                    </div>
-                    <div class="imgs">
-                        <img src="source/visit-slide3.jpg">
-                    </div>
-                    <div class="imgs">
-                        <img src="source/visit-slide4.jpg">
-                    </div>
-                    <div class="imgs">
-                        <img src="source/visit-slide5.jpg">
-                    </div>
-                    <div class="imgs">
-                        <img src="source/visit-slide6.jpg">
-                    </div>
-                    <!-- automatic navigation  -->
-                    <div class="nav_auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                        <div class="auto-btn4"></div>
-                        <div class="auto-btn5"></div>
-                        <div class="auto-btn6"></div>
-                    </div>
-                    <!-- mannual navigation  -->
-                    <div class="nav_man">
-                        <label for="radio1" class="man_btn"></label>
-                        <label for="radio2" class="man_btn"></label>
-                        <label for="radio3" class="man_btn"></label>
-                        <label for="radio4" class="man_btn"></label>
-                        <label for="radio5" class="man_btn"></label>
-                        <label for="radio6" class="man_btn"></label>
-                    </div>
-                    </div>
+    <!-- Slider Section -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div id="slider">
+                    <figure>
+                        <img src="source/visit-slide2.jpg" alt="Facility Image 2">
+                        <img src="source/visit-slide3.jpg" alt="Facility Image 3">
+                        <img src="source/visit-slide4.jpg" alt="Facility Image 4">
+                        <img src="source/visit-slide5.jpg" alt="Facility Image 5">
+                        <img src="source/visit-slide6.jpg" alt="Facility Image 6"> <!-- Repeated for smooth loop -->
+                    </figure>
                 </div>
             </div>
-            <!-- text content  -->
-            <div class="text-content">
+            <!-- Address and timing text content  -->
+            <div class="slider-content">
                 <h2>Address</h2>
                 <p>Sr. No. 149, VIP Road, Vesu, Bharthana, <BR>Surat, Gujarat 395007</p>
                 <h2>Timings</h2>
                 <p>Monday to Friday | 10:00 AM to 6:00 PM</p>
             </div>
         </div>
-    </div>
-    
+    </section>
+
     <!-- fourth section  -->
     <div class="m4">
         <div class="text-content">
@@ -214,14 +185,16 @@
                         <li><a href="https://www.google.com/maps/place/Kolkata" target="_blank">Kolkata</a></li>
                         <li><a href="https://www.google.com/maps/place/Bengaluru" target="_blank">Bengaluru</a></li>
                     </ul>
-                </div><div>
+                </div>
+                <div>
                     <h3>Explore</h3>
                     <ul>
                         <li><a href="get-quote.html">Book A Design</a></li>
                         <li><a href="contact-us.html">Visit Us</a></li>
                         <li><a href="how-it-works.html">How It Works?</a></li>
                     </ul>
-                </div><div>
+                </div>
+                <div>
                     <h3>Get in touch</h3>
                     <ul>
                         <li>Call us</li>

@@ -1,62 +1,78 @@
 // Slider Styling JS
+let currentStep = 1;
+const totalSteps = 5;
+const stepTitles = [
+    "Meet designer",
+    "Book at Interia",
+    "Place the order",
+    "Execution and Installation",
+    "Move in!"
+];
+const stepDescriptions = [
+    "Let's get to know you better and we'll share design concepts and a quote",
+    "Once you're happy with what we've proposed, pay 5% of the final quote",
+    "Finalise the design, and your project is now off to a good start",
+    "Manufacturing and installation happens as per design",
+    "Your dream home is now a reality!"
+];
 
-function clk1(){
-  document.getElementById('img-bk').style['width'] = "65px";
-  document.getElementById('cls-f').style['margin-left'] = "0px";
-  document.getElementById('d6-2-h1').textContent = "Meet designer";
-  document.getElementById('d6-2-p').textContent = "Let's get to know you better and we'll share design concepts and a quote";
-}
-function clk2(){
-  document.getElementById('img-bk').style['width'] = "174px";
-  document.getElementById('cls-f').style['margin-left'] = "-800px";
-  document.getElementById('d6-2-h1').textContent = "Seal the deal";
-  document.getElementById('d6-2-p').textContent = "Book Livspace by paying 5% of the final quote or Rs.25000 (whichever is higher)";
-}
-function clk3(){
-  document.getElementById('img-bk').style['width'] = "282px";
-  document.getElementById('cls-f').style['margin-left'] = "-1600px";
-  document.getElementById('d6-2-h1').textContent = "Place the order";
-  document.getElementById('d6-2-p').textContent = "It's execution time! Pay 50% of the final quotation to kickstart the order process";
-}
-function clk4(){
-  document.getElementById('img-bk').style['width'] = "394px";
-  document.getElementById('cls-f').style['margin-left'] = "-2400px";
-  document.getElementById('d6-2-h1').textContent = "Installation begins";
-  document.getElementById('d6-2-p').textContent = "Pay 100% before delivery and watch your home come alive";
-}
-function clk5(){
-  document.getElementById('img-bk').style['width'] = "500px";
-  document.getElementById('cls-f').style['margin-left'] = "-3200px";
-  document.getElementById('d6-2-h1').textContent = "Move in!";
-  document.getElementById('d6-2-p').textContent = "Your Livspace home is now ready! It's time to make new memories!";
-}
+function updateSlider(step) {
+    // Update step numbers
+    document.querySelectorAll('.step-number').forEach((el, index) => {
+        if (index + 1 === step) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
 
-function im_ch(){
-  if (document.getElementById('img-bk').offsetWidth >= 500){
-    document.getElementById('ara1').click()
-  }
-  else if (document.getElementById('img-bk').offsetWidth >= 395){
-    document.getElementById('ara5').click()
-  }
-  else if (document.getElementById('img-bk').offsetWidth >= 282){
-    document.getElementById('ara4').click()
-  }
-  else if (document.getElementById('img-bk').offsetWidth >= 175){
-    document.getElementById('ara3').click()
-  }
-  else if (document.getElementById('img-bk').offsetWidth >= 65){
-    document.getElementById('ara2').click()
-  }
+    // Update content
+    document.getElementById('d5-2-h1').textContent = stepTitles[step - 1];
+    document.getElementById('d5-2-p').textContent = stepDescriptions[step - 1];
+
+    // Update slides
+    document.querySelectorAll('.slide').forEach((slide, index) => {
+        if (index + 1 === step) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
 }
 
+function clk1() {
+    currentStep = 1;
+    updateSlider(currentStep);
+}
 
-let x = 1
-setInterval(function(){
-  if(x >= 6){
-    im_ch();
-    x = 1;
-  }
-  else{nw = document.getElementById('img-bk').offsetWidth + 10;
-  document.getElementById('img-bk').style['width'] = `${nw}px`}
-  x++;
-}, 1000)
+function clk2() {
+    currentStep = 2;
+    updateSlider(currentStep);
+}
+
+function clk3() {
+    currentStep = 3;
+    updateSlider(currentStep);
+}
+
+function clk4() {
+    currentStep = 4;
+    updateSlider(currentStep);
+}
+
+function clk5() {
+    currentStep = 5;
+    updateSlider(currentStep);
+}
+
+// Auto advance
+function autoAdvance() {
+    currentStep = currentStep % totalSteps + 1;
+    updateSlider(currentStep);
+}
+
+// Start auto-advance when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateSlider(1); // Initialize first slide
+    setInterval(autoAdvance, 4000); // Change slide every 4 seconds
+});

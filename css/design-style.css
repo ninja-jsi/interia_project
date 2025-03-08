@@ -1,10 +1,66 @@
 .banner{
-    height: 75vh;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../source/design-background.jpg);
-
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../source/design-background.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    overflow: hidden;
+    height: 60vh;
 }
+
+.banner .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.banner .content h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .content {
+        padding: 120px 20px 50px;
+    }
+
+    .banner .content h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 100px 20px 40px;
+    }
+
+    .banner .content h1 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 80px 15px 30px;
+    }
+
+    .banner .content h1 {
+        font-size: 28px;
+    }
+}
+
 .content{
-    top: 40%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 20px 60px;
+    text-align: center;
 }
 
 /* Showcasing Designs */

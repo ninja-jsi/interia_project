@@ -15,18 +15,28 @@
     <script src="js/home-code.js"></script>
     <script src="js/code.js"></script>
 
-    <div class="banner">
+    <!-- Navbar Section -->
+    <div class="navbar-container">
         <div class="navbar">
-            <img onclick="btn('index.html');" src="./source/logo.png" class="logo">
-            <ul>
+            <img onclick="btn('index.html');" src="source/logo.png" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="get-quote.html">Get Quote</a></li>
                 <li><a href="our-designs.html">Design ideas</a></li>
                 <li><a href="how-it-works.html">How It Works?</a></li>
                 <li><a href="contact-us.html">Visit Us</a></li>
-            </ul>
+            </ul>    
         </div>
+    </div>
 
+    <div class="banner">
         <div class="content">
             <h1>DESIGN YOUR DREAM</h1>
             <p>Whether it's a magazine-like dream kitchen or your entire home, enjoy end-to-end solutions from design to installation.</p>
@@ -155,46 +165,51 @@
     <!-- Section Five - Steps to Design -->
     <div class="m5">
         <div class="t5">
-            <h1>Design Home In Just 5 Simple steps</h1>
+            <h1>Simple steps</h1>
         </div>
-        <div class="d5">
-            <img src="source/home-m6.png" usemap="#img-mp">
-            <div id="img-bk" style="width: 65px;"></div>
+        <div class="steps-container">
+            <div class="step-numbers">
+                <div class="step-number active" onclick="clk1()">1</div>
+                <div class="step-number" onclick="clk2()">2</div>
+                <div class="step-number" onclick="clk3()">3</div>
+                <div class="step-number" onclick="clk4()">4</div>
+                <div class="step-number" onclick="clk5()">5</div>
+            </div>
         </div>
-        <div class="d5-2">
+        <div class="step-content">
             <h1 id="d5-2-h1">Meet designer</h1>
             <p id="d5-2-p">Let's get to know you better and we'll share design concepts and a quote</p>
         </div>
-        <div class="d5-3">
-            <div class="slider">
-                <div class="slide">
-                    <div class="imgs f" id="cls-f">
-                        <img src="source/how-m1-1.jpg">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="source/how-m1-1.jpg" alt="Step 1">
                     </div>
-                    <div class="imgs">
-                        <img src="source/how-m1-2.jpg">
+                    <div class="slide">
+                        <img src="source/how-m1-2.jpg" alt="Step 2">
                     </div>
-                    <div class="imgs">
-                        <img src="source/how-m1-3.jpg">
+                    <div class="slide">
+                        <img src="source/how-m1-3.jpg" alt="Step 3">
                     </div>
-                    <div class="imgs">
-                        <img src="source/how-m1-4.jpg">
+                    <div class="slide">
+                        <img src="source/how-m1-4.jpg" alt="Step 4">
                     </div>
-                    <div class="imgs">
-                        <img src="source/how-m1-5.jpg">
+                    <div class="slide">
+                        <img src="source/how-m1-5.jpg" alt="Step 5">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- <map name="img-mp">
+    <map name="img-mp">
         <area shape="circle" coords="32,75,36" id="ara1" onclick="clk1();">
         <area shape="circle" coords="142,75,36" id="ara2" onclick="clk2();">
         <area shape="circle" coords="252,75,36" id="ara3" onclick="clk3();">
         <area shape="circle" coords="362,75,36" id="ara4" onclick="clk4();">
         <area shape="circle" coords="472,75,36" id="ara5" onclick="clk5();">
-    </map> -->
+    </map>
 
     <!-- Last Section  - To Get Started -->
     <div class="m-last">
@@ -231,14 +246,16 @@
                         <li><a href="https://www.google.com/maps/place/Kolkata" target="_blank">Kolkata</a></li>
                         <li><a href="https://www.google.com/maps/place/Bengaluru" target="_blank">Bengaluru</a></li>
                     </ul>
-                </div><div>
+                </div>
+                <div>
                     <h3>Explore</h3>
                     <ul>
                         <li><a href="get-quote.html">Book A Design</a></li>
                         <li><a href="contact-us.html">Visit Us</a></li>
                         <li><a href="how-it-works.html">How It Works?</a></li>
                     </ul>
-                </div><div>
+                </div>
+                <div>
                     <h3>Get in touch</h3>
                     <ul>
                         <li>Call us</li>
@@ -254,5 +271,7 @@
         </div>
     </footer>
 
+    <!-- Add script reference before closing body tag -->
+    <script src="js/home-steps.js"></script>
 </body>
 </html>

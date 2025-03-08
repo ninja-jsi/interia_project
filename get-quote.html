@@ -20,18 +20,28 @@
     <script src="js/code.js"></script>
     <script src="netlify/functions/submitForm.js"></script>
 
-    <div class="banner">
+    <!-- Navbar Section -->
+    <div class="navbar-container">
         <div class="navbar">
             <img onclick="btn('index.html');" src="source/logo.png" class="logo">
-            <ul>
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="get-quote.html">Get Quote</a></li>
                 <li><a href="our-designs.html">Design ideas</a></li>
                 <li><a href="how-it-works.html">How It Works?</a></li>
                 <li><a href="contact-us.html">Visit Us</a></li>
-            </ul>
+            </ul>    
         </div>
+    </div>
 
+    <div class="banner">
         <div class="content">
             <h1>TALK TO A DESIGNER</h1>
         </div>
@@ -159,7 +169,7 @@
             <div class="faq-item" onclick="toggleFAQ('p5', this)">
                 <div class="faq-question">How will my site be measured? <span class="faq-icon">+</span></div>
                 <p id="p5" class="faq-answer"><br>You can share the floor plan of your home with our designers, that
-                    should help us to start your project. If in case you don’t have the floor plan, we will assign our
+                    should help us to start your project. If in case you don't have the floor plan, we will assign our
                     representative for a site visit.</p>
             </div>
             <div class="faq-item" onclick="toggleFAQ('p6', this)">

@@ -51,3 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('#hamburger-icon');
+    const navMenu = document.querySelector('#nav-links');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('#nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});

@@ -1,36 +1,53 @@
-.banner{
-    height: 85vh;
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../source/show-background-living-room.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    /* background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(source/show-background-living-room.jpg); */
-}
-.content{
-    top: 45%;
+    background-position: center;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    box-sizing: border-box;
 }
 
-/* General Styling for container*/
-.m1 {
-    padding: 150px 250px;
-    background-color: #f9f9f9;
+.content {
+    position: relative;
+    text-align: center;
+    width: min(90%, 900px);
+    padding: 20px;
+    margin: 0 auto;
+    z-index: 1;
 }
+
+/* General Styling for container */
+.m1 {
+    padding: clamp(40px, 8vw, 150px) clamp(20px, 5vw, 250px);
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
 .t1 {
     width: 100%;
     text-align: center;
-}
-.t1 p {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
+    margin-bottom: clamp(30px, 5vw, 50px);
 }
 
-/* Grid container which contains 3 columns per row*/
+.t1 p {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* Grid container which contains 3 columns per row */
 .d1 {
-    margin-top: 50px;
+    width: 100%;
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(20px, 3vw, 40px);
     justify-content: center;
+    box-sizing: border-box;
 }
 
 /* Container Designing */
@@ -40,52 +57,120 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    padding: 20px;
+    padding: clamp(15px, 2vw, 20px);
     transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
 .d1 div:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+
 .d1 div img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
     border-radius: 12px;
     transition: 0.4s;
     cursor: pointer;
 }
+
 .d1 div img:hover {
     transform: scale(1.07);
 }
+
 .d1 div h2 {
-    margin: 15px 0 10px 0;
-    font-size: 22px;
+    margin: 0;
+    font-size: clamp(18px, 2.5vw, 22px);
     color: #222;
     font-weight: 600;
 }
+
 .d1 div span {
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     color: #eb595f;
     font-weight: bold;
     display: block;
-    margin-bottom: 15px;
 }
 
-/* button desiging */
+/* button designing */
 .d1 div button {
     cursor: pointer;
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
     background: #eb595f;
     color: #ffffff;
-    border: none;
-    padding: 12px 20px;
+    border: 2px solid #eb595f;
+    padding: clamp(10px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
     border-radius: 10px;
     font-weight: bold;
     transition: 0.4s;
+    margin-top: auto;
 }
+
 .d1 div button:hover {
     background: white;
-    border: solid 2px;
     color: #eb595f;
     transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .m1 {
+        padding: 80px 40px;
+    }
+    
+    .d1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .m1 {
+        padding: 60px 20px;
+    }
+    
+    .t1 {
+        margin-bottom: 25px;
+    }
+    
+    .d1 div {
+        padding: 15px;
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        min-height: 60vh;
+        padding-top: 60px;
+    }
+
+    .content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .m1 {
+        padding: 40px 15px;
+    }
+    
+    .d1 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .d1 div {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .d1 div button {
+        width: 100%;
+        padding: 10px 15px;
+    }
 }
