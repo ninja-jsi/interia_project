@@ -4,31 +4,30 @@
     background-position: center;
     width: 100%;
     overflow: hidden;
+    height: 100vh;
 }
 
 .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
     text-align: center;
+    padding-bottom: 80px;
+}
+
+.content button {
+    margin: 10px;
 }
 
 .content h1 {
     font-size: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .content p {
     font-size: 20px;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 10px;
 }
 
 .content div {
     display: flex;
-    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
