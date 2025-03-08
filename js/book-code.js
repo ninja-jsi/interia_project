@@ -40,11 +40,6 @@ window.addEventListener('load' , () => {
 //   }
 
 
-
-
-
-
-
 // Frequently Asked Questions Activity
 function toggleFAQ(id, element) {
   var answer = document.getElementById(id);
@@ -60,36 +55,3 @@ function toggleFAQ(id, element) {
       icon.textContent = "−";
   }
 }
-
-
-// form submission function and show notification message weather it is success or not 
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('myForm');
-  const messageDiv = document.getElementById('form-message');
-
-  form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch('includes/save.php', { 
-          method: 'POST',
-          body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-          if (data.includes('success')) {
-              messageDiv.textContent = 'Successfully Booked Online Consultation!';
-              messageDiv.style.color = 'green';
-              form.reset();
-          } else {
-              messageDiv.textContent = 'Error: ' + data;
-              messageDiv.style.color = 'red';
-          }
-      })
-      .catch(error => {
-          messageDiv.textContent = 'Network Error: Could not submit the form.';
-          messageDiv.style.color = 'red';
-      });
-  });
-});
