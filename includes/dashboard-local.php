@@ -1,5 +1,5 @@
 <?php
-require 'config/config.php';
+// require 'config/config.php';
 session_start();
 
 // Check if user is logged in
@@ -8,13 +8,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$username = htmlspecialchars($_SESSION['username']); // Escape output
-$sql = "SELECT * FROM user_quotes ORDER BY created_at DESC";
-$result = $conn->query($sql);
+// $username = htmlspecialchars($_SESSION['username']); // Escape output
+// $sql = "SELECT * FROM user_quotes ORDER BY created_at DESC";
+// $result = $conn->query($sql);
 
-if (!$result) {
-    die("Query failed: " . $conn->error);
-}
+// if (!$result) {
+//     die("Query failed: " . $conn->error);
+// }
 
 ?>
 <!DOCTYPE html>

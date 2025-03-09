@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quote Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg,rgb(0, 0, 0),rgb(78, 78, 78));
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logout-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .actions {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .actions-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .sort-options {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .sort-select {
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #2d3436;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23636e72' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+            min-width: 160px;
+        }
+
+        .sort-select:hover {
+            border-color: #c8d6e5;
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: #a5b1c2;
+            box-shadow: 0 0 0 2px rgba(165, 177, 194, 0.3);
+        }
+
+        .search-box {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .search-input {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            width: 250px;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #a5b1c2;
+            box-shadow: 0 0 0 2px rgba(165, 177, 194, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #b2bec3;
+            pointer-events: none;
+        }
+
+        .delete-btn {
+            background-color: #ff7675;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .delete-btn.active {
+            opacity: 1;
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .quote-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-checkbox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .quote-id {
+            font-size: 0.8rem;
+            color: #b2bec3;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-email, .quote-phone {
+            color: #636e72;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-service {
+            background-color: #dfe6e9;
+            color: #2d3436;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-message {
+            margin: 1rem 0;
+            color: #2d3436;
+            font-size: 0.9rem;
+        }
+
+        .quote-date {
+            font-size: 0.8rem;
+            color: #b2bec3;
+            margin-top: 0.5rem;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            color: #636e72;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                margin: 1rem auto;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                margin: 1rem 0;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Quote Management Dashboard</h1>
+            <div class="user-info">
+                <span id="userEmail"></span>
+                <a href="#" class="logout-btn" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="actions">
+            <div class="actions-group">
+                <h2>Quotes Overview</h2>
+                <div class="sort-options">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="created_at-desc">Date (Newest First)</option>
+                        <option value="created_at-asc">Date (Oldest First)</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="service-asc">Service (A-Z)</option>
+                        <option value="service-desc">Service (Z-A)</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search quotes..." id="searchInput">
+                    <span class="material-icons search-icon">search</span>
+                </div>
+            </div>
+            <button id="deleteBtn" class="delete-btn" disabled>Delete Selected</button>
+        </div>
+
+        <div class="quotes-grid" id="quotesGrid">
+            <div class="no-results hidden">
+                No quotes found matching your search.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            checkAuth();
+
+            // Initialize variables
+            const quotesGrid = document.getElementById('quotesGrid');
+            const deleteBtn = document.getElementById('deleteBtn');
+            const sortSelect = document.getElementById('sortSelect');
+            const searchInput = document.getElementById('searchInput');
+            const logoutBtn = document.getElementById('logoutBtn');
+            let selectedQuotes = new Set();
+
+            // Fetch initial quotes
+            fetchQuotes();
+
+            // Event Listeners
+            sortSelect.addEventListener('change', function() {
+                const [field, order] = this.value.split('-');
+                fetchQuotes(field, order);
+            });
+
+            searchInput.addEventListener('input', function() {
+                filterQuotes(this.value);
+            });
+
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                logout();
+            });
+
+            // Functions
+            function checkAuth() {
+                fetch('includes/check-auth.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.authenticated) {
+                            window.location.href = 'login.html';
+                        } else {
+                            document.getElementById('userEmail').textContent = `Welcome, ${data.email}`;
+                        }
+                    })
+                    .catch(() => {
+                        window.location.href = 'login.html';
+                    });
+            }
+
+            function fetchQuotes(sort = 'created_at', order = 'desc') {
+                fetch(`includes/fetch-quotes.php?sort=${sort}&order=${order}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            renderQuotes(data.data);
+                        } else {
+                            throw new Error(data.error);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        if (error.message === 'Unauthorized') {
+                            window.location.href = 'login.html';
+                        }
+                    });
+            }
+
+            function renderQuotes(quotes) {
+                quotesGrid.innerHTML = '';
+                if (quotes.length === 0) {
+                    showNoResults();
+                    return;
+                }
+
+                quotes.forEach(quote => {
+                    const card = createQuoteCard(quote);
+                    quotesGrid.appendChild(card);
+                });
+
+                // Add no results message element
+                const noResults = document.createElement('div');
+                noResults.className = 'no-results hidden';
+                noResults.textContent = 'No quotes found matching your search.';
+                quotesGrid.appendChild(noResults);
+
+                // Reset delete button
+                selectedQuotes.clear();
+                deleteBtn.disabled = true;
+                deleteBtn.classList.remove('active');
+            }
+
+            function createQuoteCard(quote) {
+                const card = document.createElement('div');
+                card.className = 'quote-card';
+                card.dataset.search = [
+                    quote.name,
+                    quote.email,
+                    quote.mobile,
+                    quote.service,
+                    quote.message
+                ].join(' ').toLowerCase();
+
+                card.innerHTML = `
+                    <input type="checkbox" class="quote-checkbox" data-id="${quote.id}">
+                    <div class="quote-id">ID: ${quote.id}</div>
+                    <div class="quote-name">${quote.name}</div>
+                    <div class="quote-email">${quote.email}</div>
+                    <div class="quote-phone">${quote.mobile}</div>
+                    <div class="quote-service">${quote.service}</div>
+                    <div class="quote-message">${quote.message}</div>
+                    <div class="quote-date">Created: ${new Date(quote.created_at).toLocaleDateString()}</div>
+                `;
+
+                const checkbox = card.querySelector('.quote-checkbox');
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        selectedQuotes.add(this.dataset.id);
+                    } else {
+                        selectedQuotes.delete(this.dataset.id);
+                    }
+                    deleteBtn.disabled = selectedQuotes.size === 0;
+                    deleteBtn.classList.toggle('active', selectedQuotes.size > 0);
+                });
+
+                return card;
+            }
+
+            function filterQuotes(searchTerm) {
+                const cards = document.querySelectorAll('.quote-card');
+                const noResults = document.querySelector('.no-results');
+                searchTerm = searchTerm.toLowerCase().trim();
+                let hasResults = false;
+
+                cards.forEach(card => {
+                    const isMatch = card.dataset.search.includes(searchTerm);
+                    card.classList.toggle('hidden', !isMatch);
+                    if (isMatch) hasResults = true;
+                });
+
+                noResults.classList.toggle('hidden', hasResults);
+            }
+
+            function showNoResults() {
+                const noResults = document.createElement('div');
+                noResults.className = 'no-results';
+                noResults.textContent = 'No quotes available.';
+                quotesGrid.appendChild(noResults);
+            }
+
+            function logout() {
+                fetch('includes/logout.php')
+                    .then(() => {
+                        window.location.href = 'login.html';
+                    })
+                    .catch(error => {
+                        console.error('Logout error:', error);
+                        window.location.href = 'login.html';
+                    });
+            }
+
+            // Initialize delete functionality
+            deleteBtn.addEventListener('click', async function() {
+                if (selectedQuotes.size === 0) return;
+
+                if (!confirm(`Are you sure you want to delete ${selectedQuotes.size} quote(s)?`)) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch('includes/delete-quotes.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: `ids=${JSON.stringify(Array.from(selectedQuotes))}`
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        selectedQuotes.forEach(id => {
+                            const card = document.querySelector(`.quote-checkbox[data-id="${id}"]`).closest('.quote-card');
+                            card.remove();
+                        });
+                        selectedQuotes.clear();
+                        deleteBtn.disabled = true;
+                        deleteBtn.classList.remove('active');
+                        alert(data.message);
+                    } else {
+                        throw new Error(data.error || 'Failed to delete quotes');
+                    }
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
