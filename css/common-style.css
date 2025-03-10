@@ -65,13 +65,13 @@
     width: 100%; 
 } */
 /* Active Link Styling */
-/* .navbar ul li a.active {
+.navbar ul li a.active {
     color: #eb595f;
     font-weight: bold;
 } */
 
 /* Ensure the underline stays for the active link */
-/* .navbar ul li a.active::after {
+.navbar ul li a.active::after {
     content: "";
     height: 3px;
     width: 100%;
@@ -80,7 +80,7 @@
     position: absolute;
     left: 0;
     bottom: -10px;
-} */
+}
 
 
 ul {
