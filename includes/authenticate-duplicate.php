@@ -43,24 +43,18 @@ try {
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     
-    // Check for CURL errors
     if (curl_errno($ch)) {
         throw new Exception('Curl error: ' . curl_error($ch));
     }
     
     curl_close($ch);
-
-    // If the status code isn't 200, throw an error
+    
     if ($http_code !== 200) {
-        $response_data = json_decode($response, true);
-        $error_message = $response_data['error'] ?? 'Invalid credentials';
-        throw new Exception($error_message);
+        throw new Exception('Invalid credentials');
     }
 
-    // Decode the response
     $data = json_decode($response, true);
-
-    // Check if required fields exist in the response
+    
     if (!$data || !isset($data['access_token']) || !isset($data['user']['id'])) {
         throw new Exception('Invalid response from server');
     }
@@ -70,14 +64,12 @@ try {
     $_SESSION['email'] = $data['user']['email'];
     $_SESSION['access_token'] = $data['access_token'];
 
-    // Return a successful response
     echo json_encode([
         'success' => true,
         'message' => 'Login successful'
     ]);
 
 } catch (Exception $e) {
-    // Handle exceptions and errors
     http_response_code(401);
     echo json_encode([
         'error' => $e->getMessage()

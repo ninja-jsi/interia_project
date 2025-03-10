@@ -141,7 +141,12 @@
                     body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
                 });
 
-                const data = await response.json();
+                // Log the raw response text for debugging
+                const text = await response.text();
+                console.log("Raw Response:", text);  // Log raw response text
+
+                // Attempt to parse the JSON response
+                const data = JSON.parse(text);
 
                 console.log("Response Data:", data);
 
