@@ -347,13 +347,13 @@
                     .then(response => response.json())
                     .then(data => {
                         if (!data.authenticated) {
-                            window.location.href = 'login.html';
+                            window.location.href = 'login';
                         } else {
                             document.getElementById('userEmail').textContent = `Welcome, ${data.email}`;
                         }
                     })
                     .catch(() => {
-                        window.location.href = 'login.html';
+                        window.location.href = 'login';
                     });
             }
 
@@ -370,7 +370,7 @@
                     .catch(error => {
                         console.error('Error:', error);
                         if (error.message === 'Unauthorized') {
-                            window.location.href = 'login.html';
+                            window.location.href = 'login';
                         }
                     });
             }
@@ -460,11 +460,11 @@
             function logout() {
                 fetch('includes/logout.php')
                     .then(() => {
-                        window.location.href = 'login.html';
+                        window.location.href = 'login';
                     })
                     .catch(error => {
                         console.error('Logout error:', error);
-                        window.location.href = 'login.html';
+                        window.location.href = 'login';
                     });
             }
 
