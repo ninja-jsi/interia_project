@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Home Design Quiz</title>
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/common-style.css">
+  <link rel="stylesheet" href="css/survey.css">
+</head>
+<body>
+
+      <!-- Navbar Section -->
+      <div class="navbar-container">
+        <div class="navbar">
+            <img onclick="btn('index');" src="source/logo.png" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul id="nav-links">
+                <li><a href="index">Home</a></li>
+                <li><a href="get-quote">Get Quote</a></li>
+                <li><a href="our-designs">Design ideas</a></li>
+                <li><a href="how-it-works">How It Works?</a></li>
+                <li><a href="contact-us">Visit Us</a></li>
+            </ul>    
+        </div>
+    </div>
+
+    <div class="quiz-container">
+      <h1 style="padding-bottom: 20px; text-align: center;"><span style="color: brown;">Survey Form -</span> So we know what you're looking for...</h1>
+      <div class="progress-bar"><div class="progress" id="progressBar"></div></div>
+      <form id="quizForm">
+    
+        <!-- Property Details -->
+        <div class="step active">
+          <div class="title">Your Home is...</div>
+          <div class="options">
+            <div class="option" data-value="apartment"><img src="https://images1.apartments.com/i2/nCSF4gethxyA2Y8jn2KHUM3G2KANqaPPXWRz9Of1bzA/117/bowers-south-salt-lake-ut-building-photo.jpg"><span>An apartment</span></div>
+            <div class="option" data-value="villa"><img src="https://media2.thrillophilia.com/images/photos/000/325/850/original/1593159609_228042119.jpg"><span>A villa</span></div>
+            <div class="option" data-value="independent"><img src="https://www.prithviestates.com/wp-content/uploads/2015/01/Independent-House.jpg"><span>Independent House</span></div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="title">Home Configuration</div>
+          <div class="options">
+            <div class="option" data-value="1bhk"><img src="https://marathon.in/neohomes/wp-content/uploads/sites/18/2020/11/neo_website-1bhk-smart_252.png"><span>1 BHK</span></div>
+            <div class="option" data-value="2bhk"><img src="https://furniturewalas.com/wp-content/uploads/2018/10/2-bhk.jpg"><span>2 BHK</span></div>
+            <div class="option" data-value="3bhkplus"><img src="https://sonamgroup.com/wp-content/uploads/2020/08/2.jpg"><span>3 BHK+</span></div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="title">What is the size of your home?</div>
+          <div class="image-slider-container">
+            <img id="sizeImage" src="https://images.wondershare.com/edrawmax/templates/1000-sq-ft-floor-plan.png" alt="Home size image" />
+          </div>
+          <input type="range" id="areaRange" class="range-slider" min="500" max="10000" step="500" value="1000">
+          <div class="range-value" id="rangeValue">1000 sq.ft</div>
+        </div>             
+    
+        <!-- Scope of Work -->
+        <div class="step">
+          <div class="title">What are you looking for?</div>
+          <div class="options">
+            <div class="option" data-value="new"><img src="https://img.freepik.com/premium-vector/house-sale-buying-new-housevector-illustration-real-estate-mortgage-rent-apartment-sale-c_829964-41.jpg"><span>New Home Design</span></div>
+            <div class="option" data-value="reno"><img src="https://png.pngtree.com/png-clipart/20230824/original/pngtree-house-renovation-abstract-concept-vector-illustration-picture-image_8320320.png"><span>Renovation</span></div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="title">Which package suits you?</div>
+          <div class="options packages">
+            
+            <!-- Essentials Package -->
+            <div class="package-option" data-value="package1">
+              <div class="slider">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/real-home-photos-1641987952-u6Aux/stephen-bardhan-1735297095-ehQ19/sri0416-1-1735297283-PGYr0.jpg" class="slide active">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/real-home-photos-1641987952-u6Aux/stephen-bardhan-1735297095-ehQ19/sri0414-1-1735297280-tBdRR.jpg" class="slide">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/real-home-photos-1641987952-u6Aux/stephen-bardhan-1735297095-ehQ19/sri0402-1-1735297274-zjZhe.jpg" class="slide">
+              </div>
+              <h4>Essentials Package</h4>
+              <p>✅ Ideal For: Moving in to a new home<br>
+                🕒 30–45 Days | ₹1 Lakh+<br>
+                Includes: Kitchen, Wardrobes, Basic Services</p>
+            </div>
+        
+            <!-- Premium Package -->
+            <div class="package-option" data-value="package2">
+              <div class="slider">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-eden-park-1734328735-Xoggq/2bhk-1735216398-DGwUj/v-2-1735216408-92sz0/12-1735216433-t0LRz.jpg" class="slide active">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-eden-park-1734328735-Xoggq/2bhk-1735216398-DGwUj/v-2-1735216408-92sz0/false-ceiling-265-1735216434-nv442.jpg" class="slide">
+                <img src="https://images.livspace-cdn.com/w:1080/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-eden-park-1734328735-Xoggq/2bhk-1735216398-DGwUj/v-2-1735216408-92sz0/screenshot-2024-12-26-180230-1735216436-mV7Ci.png" class="slide">
+              </div>
+              <h4>Premium Package</h4>
+              <p>✅ Ideal For: Full Renovation<br>
+                🕒 60–90 Days | ₹10 Lakhs+<br>
+                Includes: Kitchen, Appliances, Furniture, Decor</p>
+            </div>
+        
+            <!-- Other -->
+            <div class="package-option" data-value="others" id="othersPackage">
+              <div class="slider">
+                <img src="https://images.livspace-cdn.com/w:1080/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/design-ideas-1631689829-DYFFs/categories-1631797090-e35Vc/desktop-1631797104-w47JI/1518-x-1288-1648187994-4ef5H.jpg" class="slide active">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-2024-1720241010-wAOzD/category-units-1720241275-Jc6G0/kitchen-1724407314-w6pAy/15-1727263201-Sg7dy.jpg" class="slide">
+              </div>
+              <h4>Other</h4>
+              <p>Custom requirements</p>
+            </div>
+        
+          </div>
+        
+          <!-- Hidden: Custom Module Selection -->
+          <div id="customModules" class="custom-modules" style="display: none;">
+            <div class="title">Select the modules you’re interested in:</div>
+            <div class="modules-grid">
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Bedroom">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-green-gables-1734334345-VfovJ/2bhk-1734334355-w9dZt/v-1-1734334363-bnK8s/p7-mbr-1-1734334430-6ItjD.jpg" alt="Bedroom">
+                <span>Bedroom</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Kitchen">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-green-gables-1734334345-VfovJ/2bhk-1734334355-w9dZt/v-1-1734334363-bnK8s/p7-ki-1-1734334439-DOuPT.jpg" alt="Kitchen">
+                <span>Kitchen</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Bathroom">
+                <img src="https://images.livspace-cdn.com/w:1080/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-green-gables-1734334345-VfovJ/2bhk-1734334355-w9dZt/v-1-1734334363-bnK8s/p7-br-1-1734334424-RofDi.jpg" alt="Bathroom">
+                <span>Bathroom</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Living Room">
+                <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-green-gables-1734334345-VfovJ/2bhk-1734334355-w9dZt/v-1-1734334363-bnK8s/p7-lr-1-1734334436-RMxpw.jpg" alt="Living Room">
+                <span>Living Room</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Dining Area">
+                <img src="https://images.livspace-cdn.com/w:1080/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/2properties-1733457217-X1TuH/up-coming-properties-1733457246-iYN3l/bangalore-1733457269-6k6tR/prestige-green-gables-1734334345-VfovJ/2bhk-1734334355-w9dZt/v-1-1734334363-bnK8s/p7-dr-1-1734334434-RF9hQ.jpg" alt="Dining Area">
+                <span>Dining Area</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Balcony">
+                <img src="https://images.livspace-cdn.com/w:384/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/1-2025-1736068988-NDPD1/jfm-1736069001-9OxTK/balcony-1736408243-MYKy5/bl-10-1740625385-BdjRN.jpg" alt="Balcony">
+                <span>Balcony</span>
+              </label>
+              <label class="module-card">
+                <input type="checkbox" name="modules" value="Study Room">
+                <img src="https://images.livspace-cdn.com/w:384/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2023-1696420252-fyaIE/renders-1696505505-hTG0j/study-table-1696505519-Q0m8k/st17-1702448329-bp59s.jpg" alt="Study Room">
+                <span>Study Room</span>
+              </label>
+            </div>
+          </div>          
+        </div>        
+    
+        <!-- Budget -->
+        <div class="step">
+          <div class="title">What is your budget?</div>
+          <div class="options">
+            <div class="option" data-value="1-5"><img class="budget-img" src="https://png.pngtree.com/png-vector/20220113/ourmid/pngtree-cartoon-vector-pink-small-house-material-png-image_4158925.png"><span>₹1–5 Lakhs</span></div>
+            <div class="option" data-value="5-10"><img class="budget-img" src="https://img.freepik.com/premium-vector/medium-house-architecture-vector-flat-illustration-design_612398-480.jpg"><span>₹5–10 Lakhs</span></div>
+            <div class="option" data-value="10+"><img class="budget-img" src="https://thumbs.dreamstime.com/b/big-house-14776100.jpg"><span>₹10 Lakhs+</span></div>
+          </div>
+        </div>
+    
+        <!-- Timeline -->
+        <div class="step">
+          <div class="title">When would you like to start?</div>
+          <div class="options" id="timeline">
+            <div class="option" data-value="immediate"><img src="https://cdn-icons-png.flaticon.com/512/7194/7194954.png"><span>Immediately</span></div>
+            <div class="option" data-value="1month"><img src="https://cdn2.iconfinder.com/data/icons/calendar-4/154/calendar-date-two-second-day-month-512.png"><span>In 1 Month</span></div>
+            <div class="option" data-value="flexible"><img src="https://cdn-icons-png.freepik.com/256/584/584635.png"><span>Flexible</span></div>
+          </div>
+        </div>
+    
+        <!-- Thank You -->
+        <div class="step">
+          <div class="title" style="text-align: center;">Thank you! 🎉</div>
+          <p style="text-align:center;">We’ll contact you soon to discuss your interior design journey.</p>
+          <img src="https://img.freepik.com/free-vector/thank-you-placard-concept-illustration_114360-14876.jpg" class="thank-you-img">
+        </div>
+    
+        <!-- Nav Buttons -->
+        <div class="navigation">
+          <button type="button" onclick="prevStep()" id="backBtn" disabled>Back</button>
+          <button type="button" onclick="nextStep()" id="nextBtn">Next</button>
+        </div>
+      </form>
+    </div>
+    <script src="js/survey.js"></script>
+</body>
+ <!-- footer section  -->
+ <footer>
+  <div class="ftr-m">
+      <div class="ftr-t">
+          <img src="source/logo.png">
+      </div>
+      <div class="ftr-d">
+          <div>
+              <h3>Design ideas</h3>
+              <ul>
+                  <li><a href="our-projects?topic=living-room">Living Rooms</a></li>
+                  <li><a href="our-projects?topic=kitchen">Kitchens</a></li>
+                  <li><a href="our-projects?topic=master-bedroom">Master Bedrooms</a></li>
+                  <li><a href="our-projects?topic=kids-bedroom">Kids Bedrooms</a></li>
+              </ul>
+          </div>
+          <div>
+              <h3>Locations</h3>
+              <ul>
+                  <li><a href="https://www.google.com/maps/place/Mumbai" target="_blank">Mumbai</a></li>
+                  <li><a href="https://www.google.com/maps/place/New+Delhi" target="_blank">New Delhi</a></li>
+                  <li><a href="https://www.google.com/maps/place/Kolkata" target="_blank">Kolkata</a></li>
+                  <li><a href="https://www.google.com/maps/place/Bengaluru" target="_blank">Bengaluru</a></li>
+              </ul>
+          </div>
+          <div>
+              <h3>Explore</h3>
+              <ul>
+                  <li><a href="get-quote">Book A Design</a></li>
+                  <li><a href="contact-us">Visit Us</a></li>
+                  <li><a href="how-it-works">How It Works?</a></li>
+                  <li><a href="login">Login (Only for Admins)</a></li>
+              </ul>
+          </div>
+          <div>
+              <h3>Get in touch</h3>
+              <ul>
+                  <li>Call us</li>
+                  <a href="tel:8849221060">+91 8849221060</a>
+                  <li>Email us</li>
+                  <a href="mailto:kheniutsav007@gmail.com">kheniutsav007@gmail.com</a>
+              </ul>
+          </div>
+      </div>
+      <div class="ftr-b">
+          <p>© 2025 Interia.com | All Rights Reserved</p>
+      </div>
+  </div>
+</footer>
+</html>
