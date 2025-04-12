@@ -22,6 +22,8 @@ if (!$name || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 $host = $_SERVER['HTTP_HOST'];
 $surveyLink = $protocol . $host . "/survey?email=" . urlencode($email);
+$imageUrl1 = $protocol . $host . "/images/logo.png";
+$imageUrl2 = $protocol . $host . "/images/Polar_bear.png";
 
 $mail = new PHPMailer(true);
 
@@ -45,15 +47,12 @@ try {
 
     // Replace placeholders in the template
     $htmlBody = str_replace(
-        ['{{name}}', '{{survey_link}}'],
-        [$name, $surveyLink],
+        ['{{name}}', '{{survey_link}}', '{{image_url_1}}', '{{image_url_2}}'],
+        [$name, $surveyLink, $imageUrl1, $imageUrl2],
         $htmlTemplate
     );
 
-
     $mail->Body = $htmlBody;
-
-
 
     $mail->send();
     echo json_encode(['success' => true, 'message' => 'Survey email sent successfully']);
