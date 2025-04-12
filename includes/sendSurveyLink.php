@@ -35,7 +35,7 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
-    $mail->setFrom('jackxstreaming@gmail.com', 'Interio Designing Studio'); // ✅ Sender must match Gmail account
+    $mail->setFrom('jackxstreaming@gmail.com', 'Interio Studio'); // ✅ Sender must match Gmail account
     $mail->addAddress($email, $name);
 
     $mail->isHTML(true); // Set to true if sending HTML email

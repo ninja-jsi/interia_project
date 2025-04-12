@@ -217,7 +217,7 @@ body {
   
   /* On hover */
   .module-card:hover {
-    border-color: #007bff;
+    border-color: #8B0000;
     background-color: #f0f8ff;
   }
   
@@ -228,11 +228,11 @@ body {
   }
   
   .module-card input[type="checkbox"]:checked ~ span {
-    color: #007bff;
+    color: #8B0000;
   }
   
   .module-card input[type="checkbox"]:checked ~ img {
-    border: 2px solid #007bff;
+    border: 2px solid #8B0000;
   }
   
 
@@ -269,7 +269,7 @@ body {
 
   .package-option:hover,
   .package-option.selected {
-    border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    border-color: #8B0000;
+    box-shadow: 0 0 10px rgba(71, 0, 0, 0.3);
   }
   
