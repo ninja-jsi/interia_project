@@ -22,10 +22,10 @@
         }
 
         .login-container {
-            background: white;
+            background: #2a2a2a;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 400px;
         }
@@ -35,10 +35,22 @@
             margin-bottom: 2rem;
         }
 
+        .login-header img {
+            height: 50px;
+            margin-bottom: 1rem;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
         .login-header h1 {
-            color: #2d3436;
+            color: #ffffff;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #a0a0a0;
         }
 
         .login-form {
@@ -54,13 +66,15 @@
         }
 
         .form-group label {
-            color: #636e72;
+            color: #ffffff;
             font-size: 0.9rem;
         }
 
         .form-group input {
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 1px solid #404040;
+            background: #333333;
+            color: #ffffff;
             border-radius: 5px;
             font-size: 1rem;
             transition: all 0.3s;
@@ -68,13 +82,13 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #a5b1c2;
-            box-shadow: 0 0 0 2px rgba(165, 177, 194, 0.3);
+            border-color: #555555;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
         }
 
         .login-btn {
-            background: linear-gradient(135deg, rgb(0, 0, 0), rgb(78, 78, 78));
-            color: white;
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            color: #2a2a2a;
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
@@ -85,11 +99,12 @@
 
         .login-btn:hover {
             transform: translateY(-2px);
+            background: linear-gradient(135deg, #e0e0e0, #ffffff);
         }
 
         .error-message {
-            background-color: #fee;
-            color: #e74c3c;
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #ff6b6b;
             padding: 1rem;
             border-radius: 5px;
             margin-bottom: 1rem;
@@ -107,6 +122,7 @@
 <body>
     <div class="login-container">
         <div class="login-header">
+            <img src="source/logo.png" alt="Interia Logo">
             <h1>Welcome Back</h1>
             <p>Please login to continue</p>
         </div>

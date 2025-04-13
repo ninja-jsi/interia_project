@@ -1163,10 +1163,18 @@ async function handleDrop(e) {
 }
 
 async function deleteTask(taskId) {
-    const [type, id] = taskId.split('-');
-    const table = type === 'form' ? 'user_quotes' : 'survey_responses';
-
     try {
+        // Show confirmation dialog
+        const confirmed = confirm('Are you sure you want to delete this task? This action cannot be undone.');
+        
+        if (!confirmed) {
+            return; // Exit if user cancels
+        }
+
+        // Split the taskId to get type and id
+        const [type, id] = taskId.split('-');
+        const table = type === 'form' ? 'user_quotes' : 'survey_responses';
+
         const { error } = await supabase
             .from(table)
             .delete()
@@ -1174,22 +1182,25 @@ async function deleteTask(taskId) {
 
         if (error) throw error;
 
-        // Remove the task element from the DOM
+        // Remove task from UI
         const taskElement = document.querySelector(`[data-task-id="${taskId}"]`);
         if (taskElement) {
-            const taskList = taskElement.closest('.task-list');
             taskElement.remove();
-
+            
             // Add "No tasks" message if the list is empty
-            if (!taskList.children.length) {
+            const taskList = taskElement.closest('.task-list');
+            if (taskList && !taskList.children.length) {
                 const noTasksMessage = document.createElement('div');
                 noTasksMessage.className = 'no-tasks';
                 noTasksMessage.textContent = 'No tasks yet';
                 taskList.appendChild(noTasksMessage);
             }
         }
+
+        showNotification('Task deleted successfully', 'success');
     } catch (error) {
         console.error('Error deleting task:', error);
+        showNotification('Failed to delete task', 'error');
     }
 }
 

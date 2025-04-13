@@ -77,7 +77,7 @@ body.body-pd {
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    background: #1a1a1a;
+    background: #2a2a2a;
     padding: 1rem;
     transition: transform var(--transition-speed);
     z-index: 200;
@@ -101,7 +101,6 @@ body.body-pd {
     height: 40px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
 }
 
 .sidebar__menu {
@@ -1011,11 +1010,11 @@ body.body-pd {
 
 .overview-card {
     background: var(--card-bg);
-    border-radius: var(--border-radius);
     padding: 2rem;
+    border-radius: var(--border-radius);
     text-align: center;
+    transition: transform 0.3s ease;
     border: 2px solid var(--border-color);
-    transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -1025,34 +1024,90 @@ body.body-pd {
     border-color: var(--primary-color);
 }
 
+.overview-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
 .overview-card h3 {
     color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .overview-card .number {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin: 0;
-    line-height: 1;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    color: var(--text-color);
 }
 
-.overview-card:hover .number {
-    color: var(--primary-color-dark);
+/* Tasks Section */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.overview-card .icon {
-    font-size: 2rem;
-    color: var(--primary-color);
+.kanban-column {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    min-height: 500px;
+}
+
+.kanban-column h3 {
+    color: var(--text-color);
     margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
 }
 
-.overview-card:hover .icon {
-    transform: scale(1.1);
+.task-list {
+    min-height: 400px;
+    padding: 1rem;
+    background: var(--body-bg);
+    border-radius: var(--border-radius);
+}
+
+/* Mobile Responsive Styles for Tasks */
+@media (max-width: 768px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+    }
+
+    .kanban-column {
+        min-height: auto;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .task-list {
+        min-height: 200px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .kanban-column::-webkit-scrollbar,
+    .task-list::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .kanban-column::-webkit-scrollbar-track,
+    .task-list::-webkit-scrollbar-track {
+        background: var(--body-bg);
+    }
+
+    .kanban-column::-webkit-scrollbar-thumb,
+    .task-list::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 5px;
+    }
 }
 
 /* Animations */
