@@ -757,6 +757,170 @@ body.body-pd {
     }
 }
 
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .header {
+        left: 0;
+    }
+
+    .header__toggle {
+        display: block;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .analytics-grid {
+        padding: 0.5rem;
+    }
+
+    .analytics-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .kanban-board {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .section__header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-controls {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .filter-controls input,
+    .filter-controls select {
+        width: 100%;
+    }
+
+    .visitors-list {
+        max-height: 300px;
+    }
+
+    .visitor-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .visitor-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .visitor-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    .header__user {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+    }
+
+    .header__user-name {
+        font-size: 0.9rem;
+    }
+
+    .overview-card {
+        padding: 1rem;
+    }
+
+    .overview-card .number {
+        font-size: 2rem;
+    }
+
+    .overview-card .icon {
+        font-size: 1.5rem;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    .visitors-section {
+        padding: 1rem;
+    }
+
+    .visitors-section__title {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Menu Toggle Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.sidebar.show {
+    animation: slideIn 0.3s ease-out;
+}
+
+.sidebar.hide {
+    animation: slideOut 0.3s ease-out;
+}
+
+/* Overlay for mobile menu */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 150;
+}
+
+.overlay.show {
+    display: block;
+}
+
 .mt-4 {
     margin-top: 2rem;
 }

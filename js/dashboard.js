@@ -79,6 +79,7 @@ const emailSearch = document.querySelector('#email-search')
 const taskForm = document.querySelector('.task-form')
 const taskInput = document.querySelector('.task-input')
 const taskLists = document.querySelectorAll('.task-list')
+const overlay = document.querySelector('.overlay')
 
 // State
 let submissions = []
@@ -156,6 +157,21 @@ function checkAuth() {
         });
 }
 
+// Mobile Menu Toggle
+function toggleSidebar() {
+    sidebar.classList.toggle('show');
+    sidebar.classList.toggle('hide');
+    overlay.classList.toggle('show');
+    document.body.classList.toggle('no-scroll');
+}
+
+// Close sidebar when clicking overlay
+overlay.addEventListener('click', () => {
+    if (sidebar.classList.contains('show')) {
+        toggleSidebar();
+    }
+});
+
 // Initialize Dashboard
 async function initDashboard() {
     try {
@@ -165,6 +181,9 @@ async function initDashboard() {
         
         // Initialize navigation
         initNavigation();
+        
+        // Add sidebar toggle event listener
+        sidebarToggle.addEventListener('click', toggleSidebar);
         
         // Show Overview section by default
         showSection('overview');
@@ -1250,16 +1269,6 @@ submissionTypeSelect?.addEventListener('change', renderSubmissions)
 emailSearch?.addEventListener('input', renderSubmissions)
 
 // Helper Functions
-function toggleSidebar() {
-    sidebar.classList.toggle('hide')
-    header.classList.toggle('body-pd')
-    main.classList.toggle('body-pd')
-    document.body.classList.toggle('body-pd')
-    
-    const isHidden = sidebar.classList.contains('hide')
-    localStorage.setItem('sidebarState', isHidden ? 'hidden' : 'visible')
-}
-
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div')
     notification.className = `notification notification--${type}`
