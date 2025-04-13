@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="source/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/1.0.2/ua-parser.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 </head>
 <body>
@@ -227,12 +228,22 @@
         </div>
     </div>
     
-    <!-- Footer Section -->
+    <!-- footer  -->
     <footer>
         <div class="ftr-m">
-            <div class="ftr-t">
-                <img src="source/logo.png">
-            
+            <div class="ftr-t" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; flex-wrap: wrap; gap: 1rem;">
+                <img src="source/logo.png" style="max-width: 150px; height: auto;">
+                <div class="social-links" style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="https://in.linkedin.com/in/jasmeetsingh-swanni" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-size: 2rem; transition: color 0.3s ease; padding: 0.5rem;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#ffffff'">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://www.instagram.com/jasmeet_swanni/" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-size: 2rem; transition: color 0.3s ease; padding: 0.5rem;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#ffffff'">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                    <a href="https://twitter.com/jasmeetswanni" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-size: 2rem; transition: color 0.3s ease; padding: 0.5rem;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#ffffff'">
+                        <i class='bx bxl-twitter'></i>
+                    </a>
+                </div>
             </div>
             <div class="ftr-d">
                 <div>
@@ -280,5 +291,18 @@
 
     <!-- Add script reference before closing body tag -->
     <script src="js/home-steps.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Live Chat Script -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67fb2f5c937d511910c52a8f/1iomj20uf';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 </body>
 </html>
